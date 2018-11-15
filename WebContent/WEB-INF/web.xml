@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>PreviewDocument</display-name>
+  <servlet>
+    <servlet-name>initServlet</servlet-name>
+    <servlet-class>com.yonyou.servlet.InitServlet</servlet-class>
+    <load-on-startup>3</load-on-startup>
+  </servlet>
+  <servlet>
+    <servlet-name>showDocument</servlet-name>
+    <servlet-class>com.yonyou.servlet.ShowDocumentServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>convert</servlet-name>
+    <servlet-class>com.yonyou.servlet.ConverServlet</servlet-class>
+  </servlet>
+   <servlet>
+    <servlet-name>download</servlet-name>
+    <servlet-class>com.yonyou.servlet.DownloadServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>showDocument</servlet-name>
+    <url-pattern>/showDocument</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>initServlet</servlet-name>
+    <url-pattern>/initServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>convert</servlet-name>
+    <url-pattern>/convert</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>download</servlet-name>
+    <url-pattern>/download</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+  	<welcome-file>hello.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
