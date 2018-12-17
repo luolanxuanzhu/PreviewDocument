@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServlet;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
+import com.yonyou.util.FSUtil;
+
 public class InitServlet extends HttpServlet {
 	private static final long serialVersionUID = 2116425161663967427L;
 
@@ -48,7 +50,8 @@ public class InitServlet extends HttpServlet {
 
 				writer.write("cd " + p.getProperty("openoffice_location"));
 				writer.write("\r\n ");
-				writer.write("soffice -headless -accept=socket,host=127.0.0.1,port=8100;urp; -nofirststartwizard");
+				writer.write("soffice -headless -accept=socket,host=" + FSUtil.FS_FILE_CONVERT_HOST
+						+ ",port=8100;urp; -nofirststartwizard");
 				writer.write("\r\n ");
 				writer.write("@echo   on ");
 				writer.close();

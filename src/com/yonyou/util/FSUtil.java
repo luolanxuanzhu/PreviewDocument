@@ -9,9 +9,9 @@ import sun.misc.BASE64Encoder;
 
 public class FSUtil {
 
-	public static final String FS_FILE_CONVERT_HOST = "127.0.0.1";
+	public static final String FS_FILE_CONVERT_HOST = "192.168.10.85";
 
-	public static final String RESOURCE = "D:\\ftp";
+	public static final String RESOURCE = "E:\\ftp";
 
 	public static final int ISDIR = 1;
 	public static final int ISFILE = 2;

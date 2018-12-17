@@ -2,6 +2,7 @@ package com.yonyou.servlet;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -56,11 +57,13 @@ public class ShowDocumentServlet extends HttpServlet {
 				m.put("ispreview", false);
 			}
 			m.put("filename", file.getName());
+			m.put("encodename", URLEncoder.encode(file.getName(), "utf8"));
 			m.put("isfile", file.isFile() ? FSUtil.ISFILE : FSUtil.ISDIR);
 			fileInfoList.add(m);
 		}
 		req.setAttribute("fileInfoList", fileInfoList);
 		req.setAttribute("dirname", dirname);
+		req.setAttribute("encodedirname", URLEncoder.encode(dirname, "utf8"));
 		req.setAttribute("role", role);
 
 		req.getRequestDispatcher("/ShowDocuments.jsp").forward(req, response);

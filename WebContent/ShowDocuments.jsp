@@ -11,12 +11,12 @@
 		<div>
 			<c:if test="${map.ispreview==true}">
 				<a
-					href="convert?dirname=${requestScope.dirname}&filename=${map.filename}&role=${requestScope.role}">${map.filename}</a>
+					href="convert?dirname=${requestScope.encodedirname}&filename=${map.encodename}&role=${requestScope.role}">${map.filename}</a>
 			</c:if>
 			<c:if test="${map.ispreview==false}">
 				<c:if test="${map.isfile==1}">
 					<a
-						href="convert?dirname=${requestScope.dirname}&filename=${map.filename}&role=${requestScope.role}">${map.filename}</a>
+						href="convert?dirname=${requestScope.encodedirname}&filename=${map.encodename}&role=${requestScope.role}">${map.filename}</a>
 				</c:if>
 				<c:if test="${map.isfile==2}">
 				${map.filename}
